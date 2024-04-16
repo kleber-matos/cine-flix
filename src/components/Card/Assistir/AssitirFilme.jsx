@@ -1,5 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { FaStar } from "react-icons/fa";
+
 import { useParams } from "react-router-dom";
 import Header from "../../Header/Header";
 import * as S from "../style";
@@ -34,7 +36,9 @@ export default function AssistirFilme() {
           <h1>{filme.title}</h1>
           <p>{filme.overview}</p>
           <p>{filme.release_date}</p>
-          <p>{filme.vote_average}</p>
+          <p>
+            {filme.vote_average} <FaStar />
+          </p>
           <S.Button href="#assistir">Assistir</S.Button>
         </S.About>
 

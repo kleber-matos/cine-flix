@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Card = styled.div`
-  border: solid;
+  border: solid 0.3px #3333336c;
   width: 25vw;
   max-width: 300px;
   height: 55vh;
@@ -12,6 +12,31 @@ export const Card = styled.div`
   text-align: center;
   margin: 1rem;
   margin-top: 2rem;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 12vh;
+  }
+
+  h2 {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+  }
+
+  button {
+    width: 80%;
+    background-color: red;
+    color: white;
+    border: none;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+  }
 
   img {
     width: 100%;
@@ -47,12 +72,15 @@ export const Assistir = styled.section`
 `;
 export const About = styled.section`
   width: 60%;
-  border: solid;
   display: flex;
   flex-direction: column;
 
   @media (max-width: 700px) {
     width: 100%;
+  }
+
+  @media (min-width: 701px) {
+    width: 40%;
   }
 `;
 

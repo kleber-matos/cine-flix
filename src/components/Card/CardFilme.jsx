@@ -7,7 +7,10 @@ export default function CardFilme({ title, imagem, id }) {
     <S.Card>
       <Link to={`/assistirfilme/${id}`}>
         <img src={imagem} alt={title} />
-        <h2>{title}</h2>
+        <div>
+          <p>{title}</p>
+          <button>assistir agora</button>
+        </div>
       </Link>
     </S.Card>
   );

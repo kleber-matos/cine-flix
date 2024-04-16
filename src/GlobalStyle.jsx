@@ -7,6 +7,7 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
+    list-style: none;
 }
 
 body{
@@ -25,4 +26,8 @@ p{
     font-size: clamp(1rem, 10vw, 1.5rem); 
 }
 
+a {
+    color: white;
+    text-decoration: none;
+}
 `;

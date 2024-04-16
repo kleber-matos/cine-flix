@@ -10,7 +10,9 @@ export default function Header() {
     <>
       <S.Header>
         <section>
-          <h2>Cine Flix</h2>
+          <Link className="logo" to="/">
+            Cine Flix
+          </Link>
           <button onClick={() => setMenu(!menu)}>{menu ? "X" : "☰"}</button>
 
           <S.NavDesktop>

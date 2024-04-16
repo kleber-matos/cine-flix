@@ -29,17 +29,21 @@ export default function Series() {
     <>
       <Header />
 
-      <S.SpaceEvenly>
-        {filme.map((item) => (
-          <div key={item.id}>
-            <CardSeries
-              id={item.id}
-              title={item.name}
-              imagem={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
-            />
-          </div>
-        ))}
-      </S.SpaceEvenly>
+      <S.Container>
+        <S.Box>
+          <S.SpaceEvenly>
+            {filme.map((item) => (
+              <div key={item.id}>
+                <CardSeries
+                  id={item.id}
+                  title={item.name}
+                  imagem={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
+                />
+              </div>
+            ))}
+          </S.SpaceEvenly>
+        </S.Box>
+      </S.Container>
 
       {/* <h1>Titulo</h1>
       <h2>SubTitulo</h2>
