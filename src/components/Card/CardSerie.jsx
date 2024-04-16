@@ -7,8 +7,10 @@ export default function CardSerie({ title, imagem, id }) {
     <S.Card>
       <Link to={`/assitirserie/${id}`}>
         <img src={imagem} alt={title} />
-        <h2>{title}</h2>
-        <button>assistir</button>
+        <div>
+          <p>{title}</p>
+          <button>assistir</button>
+        </div>
       </Link>
     </S.Card>
   );

@@ -4,14 +4,16 @@ import CardSeries from "../../components/Card/CardSerie";
 import * as S from "../Home/style";
 
 import axios from "axios";
+import { MdNavigateBefore, MdNavigateNext } from "react-icons/md";
 
 export default function Series() {
   const [filme, setFilme] = useState([]);
+  const [page, setPage] = useState(1);
 
   const buscaDados = async () => {
     try {
       const dados = await axios.get(
-        `https://api.themoviedb.org/3/discover/tv?api_key=6040fbaaf2352854942894b5b45b4729&language=pt-BR&page=1`
+        `https://api.themoviedb.org/3/discover/tv?api_key=6040fbaaf2352854942894b5b45b4729&language=pt-BR&page=${page}`
       );
 
       setFilme(dados.data.results);
@@ -23,12 +25,14 @@ export default function Series() {
 
   useEffect(() => {
     buscaDados();
-  }, []);
+  }, [page]);
 
   return (
     <>
       <Header />
-
+      <S.SubTitle>
+        Assista suas séries do momento <span>agora!</span>
+      </S.SubTitle>
       <S.Container>
         <S.Box>
           <S.SpaceEvenly>
@@ -44,6 +48,22 @@ export default function Series() {
           </S.SpaceEvenly>
         </S.Box>
       </S.Container>
+
+      <S.BoxPage>
+        <div>
+          <button
+            onClick={() =>
+              setPage((prev) => (prev > 1 ? prev - 1 : (prev = 1)))
+            }
+          >
+            <MdNavigateBefore />
+          </button>
+          <h2>{page}</h2>
+          <button onClick={() => setPage((prev) => prev + 1)}>
+            <MdNavigateNext />
+          </button>
+        </div>
+      </S.BoxPage>
 
       {/* <h1>Titulo</h1>
       <h2>SubTitulo</h2>

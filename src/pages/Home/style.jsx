@@ -20,14 +20,27 @@ export const SpaceEvenly = styled.section`
 //   }
 // `;
 
+export const SubTitle = styled.h2`
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10vh;
+
+  span {
+    color: red;
+    margin-left: 0.5rem;
+  }
+`;
+
 export const Container = styled.section`
   display: flex;
   justify-content: center;
+  border-top: solid 1px gray;
 `;
 
 export const Box = styled.section`
   width: 70%;
-
   @media (max-width: 700px) {
     width: 100%;
   }

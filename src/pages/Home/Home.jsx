@@ -36,6 +36,9 @@ export default function Home() {
   return (
     <>
       <Header />
+      <S.SubTitle>
+        Você está no CineFlix <span>gratuito!</span>
+      </S.SubTitle>
       <S.Container>
         <S.Box>
           <S.SpaceEvenly>

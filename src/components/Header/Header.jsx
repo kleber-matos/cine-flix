@@ -28,7 +28,9 @@ export default function Header() {
                   <Link to="/series">Séries</Link>
                 </li>
                 <li>
-                  <FaSearch />
+                  <Link to="/seach">
+                    <FaSearch />
+                  </Link>
                 </li>
               </ul>
             </nav>
