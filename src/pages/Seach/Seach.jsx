@@ -39,6 +39,11 @@ export default function Seach() {
     buscaDados1();
   }, [buscaFilmes, buscaSerie]);
 
+  function enter(event) {
+    if (event.key === "Enter") {
+      setBuscaFilmes(!buscaFilmes);
+    }
+  }
   return (
     <div>
       <Header />
@@ -57,6 +62,7 @@ export default function Seach() {
             placeholder="Buscar..."
             type="text"
             onChange={(e) => setBusca(e.target.value)}
+            onKeyDown={enter}
           />
         </div>
       </S.Buscar>
