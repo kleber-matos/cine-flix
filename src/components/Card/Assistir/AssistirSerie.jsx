@@ -44,6 +44,8 @@ export default function AssistirFilme() {
         />
       </S.Assistir>
 
+      <S.SubTtitle>Assista aqui em baixo</S.SubTtitle>
+
       <S.Iframe>
         <iframe
           mozallowfullscreen

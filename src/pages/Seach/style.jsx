@@ -40,7 +40,6 @@ export const Card = styled.div`
 `;
 
 export const Buscar = styled.div`
-  border: solid;
   display: flex;
   justify-content: center;
   align-items: center;

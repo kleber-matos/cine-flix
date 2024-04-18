@@ -31,6 +31,10 @@ export const SubTitle = styled.h2`
     color: red;
     margin-left: 0.5rem;
   }
+  @media (max-width: 700px) {
+    width: 100%;
+    font-size: clamp(1rem, 10vw, 0.6rem);
+  }
 `;
 
 export const Container = styled.section`

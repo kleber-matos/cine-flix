@@ -51,6 +51,7 @@ export const Card = styled.div`
 
 export const Assistir = styled.section`
   background-color: black;
+
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -61,22 +62,32 @@ export const Assistir = styled.section`
     width: 30%;
   }
 
+  h2 {
+    text-align: center;
+    color: red;
+  }
+
   @media (max-width: 700px) {
     flex-direction: column;
-
+    justify-content: space-evenly;
     img {
       width: 100%;
-      height: 40vh;
+      height: 40%;
     }
   }
 `;
 export const About = styled.section`
   width: 60%;
+  height: 50%;
   display: flex;
   flex-direction: column;
 
   @media (max-width: 700px) {
     width: 100%;
+    justify-content: space-evenly;
+    p {
+      font-size: clamp(1rem, 10vw, 0.5rem);
+    }
   }
 
   @media (min-width: 701px) {
@@ -85,7 +96,9 @@ export const About = styled.section`
 `;
 
 export const Iframe = styled.div`
+  position: relative;
   iframe {
+    border: solid black;
     height: 100vh;
     width: 100%;
   }
@@ -113,4 +126,9 @@ export const Button = styled.a`
     height: 6vh;
     margin-bottom: 1rem;
   }
+`;
+
+export const SubTtitle = styled.h2`
+  font-size: clamp(1.2rem, 10vw, 2rem);
+  text-align: center;
 `;
