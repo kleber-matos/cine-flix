@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useEffect, useState } from "react";
 import * as S from "../Home/style";
 import Header from "../../components/Header/Header";
@@ -5,10 +7,12 @@ import axios from "axios";
 import CardFilme from "../../components/Card/CardFilme";
 import { Link, useParams } from "react-router-dom";
 import { MdNavigateBefore, MdNavigateNext } from "react-icons/md";
+import Load from "../../components/Load/Load";
 
 export default function Filmes() {
   const [filme, setFilme] = useState([]);
   const [page, setPage] = useState(2);
+  const [load, setLoad] = useState(true);
 
   const buscaDados = async () => {
     try {
@@ -18,6 +22,7 @@ export default function Filmes() {
 
       setFilme(dados.data.results);
       console.log(dados.data.results);
+      setLoad(false);
     } catch (err) {
       console.log(err);
     }
@@ -26,6 +31,10 @@ export default function Filmes() {
   useEffect(() => {
     buscaDados();
   }, [page]);
+
+  if (load) {
+    return <Load />;
+  }
 
   return (
     <>
@@ -54,8 +63,7 @@ export default function Filmes() {
           <button
             onClick={() =>
               setPage((prev) => (prev > 1 ? prev - 1 : (prev = 1)))
-            }
-          >
+            }>
             <MdNavigateBefore />
           </button>
           <h2>{page}</h2>

@@ -1,7 +1,11 @@
+/** @format */
 import styled from "styled-components";
+import load from "../../assets/load.gif";
 
 export const Card = styled.div`
   border: solid 0.3px #3333336c;
+  background-image: url(${load});
+
   width: 25vw;
   max-width: 300px;
   height: 55vh;
@@ -30,6 +34,7 @@ export const Card = styled.div`
 
   button {
     width: 80%;
+    height: 25%;
     background-color: red;
     color: white;
     border: none;
@@ -41,7 +46,7 @@ export const Card = styled.div`
   img {
     width: 100%;
     height: 70%;
-    background-image: url("https://portal.ufvjm.edu.br/a-universidade/cursos/grade_curricular_ckan/loading.gif/@@images/image.gif");
+    background-image: url(${load});
   }
 
   @media (max-width: 700px) {
@@ -113,6 +118,7 @@ export const Iframe = styled.div`
 export const Button = styled.a`
   background-color: red;
   width: 30%;
+  height: 10%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -120,6 +126,9 @@ export const Button = styled.a`
   text-decoration: none;
   color: white;
   font-weight: 600;
+  &:hover {
+    background-color: #ff0000c8;
+  }
 
   @media (max-width: 700px) {
     width: 100%;

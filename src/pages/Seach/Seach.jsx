@@ -1,9 +1,12 @@
+/** @format */
+
 import * as S from "./style";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Header from "../../components/Header/Header";
 import CardFilme from "../../components/Card/CardFilme";
 import CardSerie from "../../components/Card/CardSerie";
+import Load from "../../components/Load/Load";
 
 export default function Seach() {
   const [busca, setBusca] = useState("a");
@@ -12,16 +15,16 @@ export default function Seach() {
   const [buscaFilmes, setBuscaFilmes] = useState("");
   const [buscaSerie, SetBuscaSerie] = useState("");
   const [mensagem, setMensagem] = useState("");
+  const [load, setLoad] = useState(true);
 
   const buscaDados = async () => {
     try {
       const dados = await axios.get(
         `https://api.themoviedb.org/3/search/movie?query=${busca}&api_key=6040fbaaf2352854942894b5b45b4729`
       );
-
       setFilme(dados.data.results);
-
       console.log(dados.data.results);
+      setLoad(false);
     } catch (err) {
       console.log(err);
     }
@@ -42,8 +45,14 @@ export default function Seach() {
   function enter(event) {
     if (event.key === "Enter") {
       setBuscaFilmes(!buscaFilmes);
+      setMensagem(`Resultados encontrados por: "${busca}" `);
     }
   }
+
+  if (load) {
+    return <Load />;
+  }
+
   return (
     <div>
       <Header />
@@ -54,8 +63,7 @@ export default function Seach() {
             onClick={() => {
               setBuscaFilmes(!buscaFilmes);
               setMensagem(`Resultados encontrados por: "${busca}" `);
-            }}
-          >
+            }}>
             buscar
           </button>
           <input

@@ -1,3 +1,5 @@
+/** @format */
+
 import axios from "axios";
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
@@ -44,18 +46,19 @@ export default function AssistirFilme() {
         />
       </S.Assistir>
 
-      <S.SubTtitle>Assista aqui em baixo</S.SubTtitle>
-
-      <S.Iframe>
-        <iframe
-          mozallowfullscreen
-          webkitallowfullscreen
-          allowfullscreen
-          id="assistir"
-          src={`https://superflixapi.top/serie/${id}`}
-          frameborder="0"
-        ></iframe>
-      </S.Iframe>
+      <details>
+        <summary></summary>
+        <S.SubTtitle>Assista aqui em baixo</S.SubTtitle>
+        <S.Iframe>
+          <iframe
+            mozallowfullscreen
+            webkitallowfullscreen
+            allowfullscreen
+            id="assistir"
+            src={`https://superflixapi.top/serie/${id}`}
+            frameborder="0"></iframe>
+        </S.Iframe>
+      </details>
     </>
   );
 }
