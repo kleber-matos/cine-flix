@@ -4,10 +4,12 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import Header from "../../Header/Header";
+import Load from "../../Load/Load";
 import * as S from "../style";
 
 export default function AssistirFilme() {
   const [filme, setFilme] = useState([]);
+  const [load, setLoad] = useState(true);
   const { id } = useParams();
   const buscaDados = async () => {
     try {
@@ -17,6 +19,7 @@ export default function AssistirFilme() {
 
       setFilme(dados.data);
       console.log(dados.data);
+      setLoad(false);
     } catch (err) {
       console.log(err);
     } finally {
@@ -27,6 +30,10 @@ export default function AssistirFilme() {
   useState(() => {
     buscaDados();
   }, []);
+
+  if (load) {
+    return <Load />;
+  }
 
   return (
     <>

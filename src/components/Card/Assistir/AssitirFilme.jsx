@@ -6,10 +6,12 @@ import { FaStar } from "react-icons/fa";
 
 import { useParams } from "react-router-dom";
 import Header from "../../Header/Header";
+import Load from "../../Load/Load";
 import * as S from "../style";
 
 export default function AssistirFilme() {
   const [filme, setFilme] = useState([]);
+  const [load, setLoad] = useState(true);
   const { id } = useParams();
   const buscaDados = async () => {
     try {
@@ -19,6 +21,7 @@ export default function AssistirFilme() {
 
       setFilme(dados.data);
       console.log(dados.data);
+      setLoad(false);
     } catch (err) {
       console.log(err);
     } finally {
@@ -29,6 +32,10 @@ export default function AssistirFilme() {
   useState(() => {
     buscaDados();
   }, []);
+
+  if (load) {
+    return <Load />;
+  }
 
   return (
     <>
@@ -49,11 +56,11 @@ export default function AssistirFilme() {
           alt=""
         />
       </S.Assistir>
+      <S.Iframe>
+        <details>
+          <summary></summary>
+          <S.SubTtitle>Assista aqui em baixo</S.SubTtitle>
 
-      <details>
-        <summary></summary>
-        <S.SubTtitle>Assista aqui em baixo</S.SubTtitle>
-        <S.Iframe>
           <iframe
             mozallowfullscreen
             webkitallowfullscreen
@@ -61,8 +68,8 @@ export default function AssistirFilme() {
             id="assistir"
             src={`https://superflixapi.top/filme/${id}`}
             frameborder="0"></iframe>
-        </S.Iframe>
-      </details>
+        </details>
+      </S.Iframe>
     </>
   );
 }

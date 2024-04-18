@@ -90,6 +90,8 @@ export const About = styled.section`
   @media (max-width: 700px) {
     width: 100%;
     justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
     p {
       font-size: clamp(1rem, 10vw, 0.5rem);
     }
@@ -131,8 +133,9 @@ export const Button = styled.a`
   }
 
   @media (max-width: 700px) {
-    width: 100%;
-    height: 6vh;
+    width: 80%;
+    height: 7vh;
+
     margin-bottom: 1rem;
   }
 `;
