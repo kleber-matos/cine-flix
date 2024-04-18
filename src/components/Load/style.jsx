@@ -11,6 +11,6 @@ export const Load = styled.section`
   height: 100vh;
 
   img {
-    width: 50%;
+    width: 51%;
   }
 `;
