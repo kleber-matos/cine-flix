@@ -10,7 +10,9 @@ export default function CardSerie({ title, imagem, id }) {
       <Link to={`/assitirserie/${id}`}>
         <img src={imagem} alt={title} />
         <div>
-          <p>{title}</p>
+          <div className="title">
+            <p>{title}</p>
+          </div>
           <button>assistir</button>
         </div>
       </Link>

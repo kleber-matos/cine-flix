@@ -12,6 +12,7 @@ import * as S from "../style";
 export default function AssistirFilme() {
   const [filme, setFilme] = useState([]);
   const [load, setLoad] = useState(true);
+  const [play, setPlay] = useState(false);
   const { id } = useParams();
   const buscaDados = async () => {
     try {
@@ -43,12 +44,18 @@ export default function AssistirFilme() {
       <S.Assistir>
         <S.About>
           <h1>{filme.title}</h1>
-          <p>{filme.overview}</p>
+          <div className="sinopse">
+            <p>{filme.overview}</p>
+          </div>
           <p>{filme.release_date}</p>
+
           <p>
             {filme.vote_average} <FaStar />
           </p>
-          <S.Button href="#assistir">Assistir</S.Button>
+
+          <S.Button href="#assistir" onClick={() => setPlay(true)}>
+            Assistir
+          </S.Button>
         </S.About>
 
         <img
@@ -56,20 +63,21 @@ export default function AssistirFilme() {
           alt=""
         />
       </S.Assistir>
-      <S.Iframe>
-        <details>
-          <summary></summary>
-          <S.SubTtitle>Assista aqui em baixo</S.SubTtitle>
 
-          <iframe
-            mozallowfullscreen
-            webkitallowfullscreen
-            allowfullscreen
-            id="assistir"
-            src={`https://superflixapi.top/filme/${id}`}
-            frameborder="0"></iframe>
-        </details>
-      </S.Iframe>
+      {play && (
+        <>
+          <S.SubTtitle>Assista aqui em baixo</S.SubTtitle>
+          <S.Iframe>
+            <iframe
+              mozallowfullscreen
+              webkitallowfullscreen
+              allowfullscreen
+              id="assistir"
+              src={`https://superflixapi.top/filme/${id}`}
+              frameborder="0"></iframe>
+          </S.Iframe>
+        </>
+      )}
     </>
   );
 }

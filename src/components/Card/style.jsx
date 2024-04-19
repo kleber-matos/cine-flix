@@ -17,6 +17,13 @@ export const Card = styled.div`
   margin: 1rem;
   margin-top: 2rem;
 
+  .title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+  }
+
   div {
     display: flex;
     flex-direction: column;
@@ -84,8 +91,17 @@ export const Assistir = styled.section`
 export const About = styled.section`
   width: 60%;
   height: 50%;
+  border: solid;
   display: flex;
   flex-direction: column;
+
+  .sinopse {
+    border: solid red;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 7.5; /* Limite de 5 linhas */
+  }
 
   @media (max-width: 700px) {
     width: 100%;

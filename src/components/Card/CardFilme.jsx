@@ -10,7 +10,9 @@ export default function CardFilme({ title, imagem, id }) {
       <Link to={`/assistirfilme/${id}`}>
         <img src={imagem} alt={title} />
         <div>
-          <p>{title}</p>
+          <div className="title">
+            <p>{title}</p>
+          </div>
           <button>assistir agora</button>
         </div>
       </Link>
