@@ -1,4 +1,10 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+const FlexBox = css`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
 export const Header = styled.header`
   position: relative;
@@ -19,9 +25,8 @@ export const Header = styled.header`
   }
 
   section {
-    display: flex;
+    ${FlexBox}
     justify-content: space-between;
-    align-items: center;
   }
   button {
     background-color: transparent;
@@ -45,9 +50,8 @@ export const Header = styled.header`
 
 export const NavDesktop = styled.div`
   ul {
-    display: flex;
+    ${FlexBox}
     justify-content: space-evenly;
-    align-items: center;
     height: 10vh;
     width: 40vw;
   }
@@ -60,11 +64,9 @@ export const NavDesktop = styled.div`
 export const NavMobile = styled.div`
   text-align: center;
   nav {
+    ${FlexBox}
     width: 100%;
     height: 60vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: absolute;
     backdrop-filter: blur(10px);
     background-color: #000000;

@@ -1,73 +1,77 @@
 /** @format */
-import styled from "styled-components";
-import load from "../../assets/load.gif";
+import styled, { css } from "styled-components";
+
+const BreackText = css`
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+`;
+
+const Flexbox = css`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 export const Card = styled.div`
-  border: solid 0.3px #3333336c;
-  background-image: url(${load});
-
   width: 25vw;
   max-width: 300px;
   height: 55vh;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  overflow: hidden;
-  -webkit-box-orient: vertical;
-  text-align: center;
   margin: 1rem;
   margin-top: 2rem;
+  text-align: center;
+  border: solid 0.5px #3333336c;
+  overflow: hidden;
 
   .title {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    -webkit-line-clamp: 2;
+    ${BreackText}
+    -webkit-line-clamp: 1;
   }
 
   div {
-    display: flex;
+    ${Flexbox}
+    justify-content: space-evenly;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    height: 12vh;
+    height: 25%;
   }
 
   h2 {
-    display: -webkit-box;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    ${BreackText}
     -webkit-line-clamp: 2;
   }
 
   button {
     width: 80%;
-    height: 25%;
-    background-color: red;
-    color: white;
+    height: 4vh;
     border: none;
     font-weight: 700;
     border-radius: 4px;
+    background-color: red;
+    color: white;
     cursor: pointer;
   }
 
   img {
     width: 100%;
     height: 70%;
-    background-image: url(${load});
   }
 
   @media (max-width: 700px) {
     width: 90vw;
+    button {
+      height: 40%;
+    }
+
+    div {
+      height: 30%;
+    }
   }
 `;
 
 export const Assistir = styled.section`
-  background-color: black;
-
-  display: flex;
+  ${Flexbox}
   justify-content: space-evenly;
-  align-items: center;
-
+  background-color: black;
   height: 95vh;
 
   img {
@@ -91,16 +95,16 @@ export const Assistir = styled.section`
 export const About = styled.section`
   width: 60%;
   height: 50%;
-  border: solid;
   display: flex;
   flex-direction: column;
 
   .sinopse {
-    border: solid red;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    -webkit-line-clamp: 7.5; /* Limite de 5 linhas */
+    -webkit-line-clamp: 7;
+    height: 48%;
+    color: #a8a8a8;
   }
 
   @media (max-width: 700px) {
@@ -134,12 +138,10 @@ export const Iframe = styled.div`
 `;
 
 export const Button = styled.a`
+  ${Flexbox}
   background-color: red;
   width: 30%;
   height: 10%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   border-radius: 5px;
   text-decoration: none;
   color: white;
@@ -151,7 +153,6 @@ export const Button = styled.a`
   @media (max-width: 700px) {
     width: 80%;
     height: 7vh;
-
     margin-bottom: 1rem;
   }
 `;

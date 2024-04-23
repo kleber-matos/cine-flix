@@ -50,9 +50,9 @@ export default function Header() {
                   <Link to="/series">Séries</Link>
                 </li>
                 <li>
-                  <a href="">
+                  <Link to="/seach">
                     <FaSearch />
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </nav>

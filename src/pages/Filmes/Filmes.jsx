@@ -1,13 +1,11 @@
-/** @format */
-
 import React, { useEffect, useState } from "react";
+import { MdNavigateBefore, MdNavigateNext } from "react-icons/md";
+import axios from "axios";
+
 import * as S from "../Home/style";
 import Header from "../../components/Header/Header";
-import axios from "axios";
-import CardFilme from "../../components/Card/CardFilme";
-import { Link, useParams } from "react-router-dom";
-import { MdNavigateBefore, MdNavigateNext } from "react-icons/md";
 import Load from "../../components/Load/Load";
+import CardFilme from "../../components/Card/CardFilme";
 
 export default function Filmes() {
   const [filme, setFilme] = useState([]);
@@ -19,12 +17,11 @@ export default function Filmes() {
       const dados = await axios.get(
         `https://api.themoviedb.org/3/movie/popular?api_key=6040fbaaf2352854942894b5b45b4729&language=pt-BR&page=${page}`
       );
-
       setFilme(dados.data.results);
-      console.log(dados.data.results);
       setLoad(false);
+      // console.log(dados.data.results);
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 
@@ -63,7 +60,8 @@ export default function Filmes() {
           <button
             onClick={() =>
               setPage((prev) => (prev > 1 ? prev - 1 : (prev = 1)))
-            }>
+            }
+          >
             <MdNavigateBefore />
           </button>
           <h2>{page}</h2>
@@ -72,11 +70,6 @@ export default function Filmes() {
           </button>
         </div>
       </S.BoxPage>
-
-      {/* <h1>Titulo</h1>
-      <h2>SubTitulo</h2>
-      <h3>H3</h3>
-      <p>Paragrafo</p> */}
     </>
   );
 }

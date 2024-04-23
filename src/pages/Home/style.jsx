@@ -1,4 +1,10 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+const FlexBox = css`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 export const SpaceEvenly = styled.section`
   display: flex;
@@ -7,24 +13,9 @@ export const SpaceEvenly = styled.section`
   padding-top: 3rem;
 `;
 
-// export const Carrossel = styled.section`
-//   border: solid;
-//   position: relative;
-//   z-index: 0;
-//   text-align: center;
-
-//   img {
-//     width: 60vw;
-//     height: 40vh;
-//     opacity: 0.1;
-//   }
-// `;
-
 export const SubTitle = styled.h2`
+  ${FlexBox}
   text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   height: 10vh;
 
   span {
@@ -38,8 +29,7 @@ export const SubTitle = styled.h2`
 `;
 
 export const Container = styled.section`
-  display: flex;
-  justify-content: center;
+  ${FlexBox}
   border-top: solid 1px gray;
 `;
 
@@ -52,15 +42,14 @@ export const Box = styled.section`
 
 export const BoxPage = styled.section`
   width: 100%;
-  display: flex;
-  justify-content: center;
+  ${FlexBox}
 
   div {
-    display: flex;
-    align-items: center;
+    ${FlexBox}
     justify-content: space-evenly;
     height: 9vh;
-    width: 10%;
+    width: 20%;
+    min-width: 200px;
   }
 
   button {

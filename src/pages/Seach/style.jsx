@@ -81,6 +81,19 @@ export const Buscar = styled.div`
       background-color: #ff0000c3;
     }
   }
+
+  @media (max-width: 700px) {
+    div {
+      width: 85%;
+      height: 50%;
+    }
+    input {
+      width: 70%;
+    }
+    button {
+      width: 30%;
+    }
+  }
 `;
 
 export const SubTitle = styled.h2`
@@ -93,5 +106,9 @@ export const SubTitle = styled.h2`
   span {
     color: red;
     margin-left: 0.5rem;
+  }
+
+  @media (max-width: 700px) {
+    font-size: clamp(1rem, 10vw, 1.2rem);
   }
 `;
