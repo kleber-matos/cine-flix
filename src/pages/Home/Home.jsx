@@ -6,14 +6,15 @@ import Header from "../../components/Header/Header";
 import axios from "axios";
 import CardFilme from "../../components/Card/CardFilme";
 import { MdNavigateBefore, MdNavigateNext } from "react-icons/md";
+import Load from "../../components/Load/Load";
+import BannerSlide from "../../components/Carrossel/BannerSlide";
 
-// import { Navigation, Pagination, Autoplay } from "swiper/modules";
-// import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
-import Load from "../../components/Load/Load";
 
 export default function Home() {
   const [filme, setFilme] = useState([]);
@@ -47,6 +48,28 @@ export default function Home() {
       <S.SubTitle>
         Você está no CineFlix <span>gratuito!</span>
       </S.SubTitle>
+
+      <Swiper modules={[Autoplay]} autoplay={{ delay: 2000 }}>
+        {filme.map((item, id) => (
+          <SwiperSlide key={id}>
+            <BannerSlide
+              num={id + 1}
+              img={`https://image.tmdb.org/t/p/w500/${item.backdrop_path}`}
+            />
+          </SwiperSlide>
+        ))}
+
+        {/* {filme.map((item, id) => (
+          <div>
+            <SwiperSlide key={id}>
+              <BannerSlide
+                img={`https://image.tmdb.org/t/p/w500/${item.backdrop_path}`}
+              />
+            </SwiperSlide>
+          </div>
+        ))} */}
+      </Swiper>
+
       <S.Container>
         <S.Box>
           <S.SpaceEvenly>

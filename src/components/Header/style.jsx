@@ -1,3 +1,5 @@
+/** @format */
+
 import styled, { css } from "styled-components";
 
 const FlexBox = css`
@@ -63,6 +65,7 @@ export const NavDesktop = styled.div`
 
 export const NavMobile = styled.div`
   text-align: center;
+
   nav {
     ${FlexBox}
     width: 100%;
@@ -70,6 +73,7 @@ export const NavMobile = styled.div`
     position: absolute;
     backdrop-filter: blur(10px);
     background-color: #000000;
+    position: relative;
   }
 
   ul {
