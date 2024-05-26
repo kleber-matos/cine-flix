@@ -2,6 +2,11 @@
 
 
 Este projeto permite que você assista filmes e séries gratuitamente. É uma aplicação desenvolvida em ReactJS, utilizando diversas bibliotecas para fornecer experiência.
+#
+Paginação ✅
+Filmes ✅
+Séries ✅
+Busca por conteúdo✅
 
 ## Bibliotecas e informações 
 
