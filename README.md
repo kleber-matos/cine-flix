@@ -8,6 +8,9 @@ Filmes ✅
 Séries ✅
 Busca por conteúdo✅
 
+### Deploy:
+https://cine-flix-chi.vercel.app/
+
 ## Bibliotecas e informações 
 
 - **axios:** Utilizado para consumir API e obter informações sobre filmes e séries.
@@ -23,5 +26,8 @@ O site ainda está em desenvolvimento, faltandos alguns recursos... Continue aco
 
 
 **Site criado apenas para fins de estudos** 💻📝
+
+![WhatsApp Image 2024-07-29 at 20 01 32](https://github.com/user-attachments/assets/f78290e6-1a46-4180-a2f8-d95a9f14e709)
+
 
 Em progresso :construction:
