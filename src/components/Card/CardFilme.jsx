@@ -12,8 +12,8 @@ export default function CardFilme({ title, imagem, id }) {
         <div>
           <div className="title">
             <p>{title}</p>
+            <button>assistir agora</button>
           </div>
-          <button>assistir agora</button>
         </div>
       </Link>
     </S.Card>
