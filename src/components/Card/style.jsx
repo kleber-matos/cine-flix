@@ -26,6 +26,13 @@ export const Card = styled.div`
   .title {
     ${BreackText}
     -webkit-line-clamp: 1;
+    color: white;
+    height: 20vh;
+    display: flex;
+
+    p {
+      font-size: 1.2rem;
+    }
   }
 
   div {
@@ -33,6 +40,7 @@ export const Card = styled.div`
     justify-content: space-evenly;
     flex-direction: column;
     height: 25%;
+    width: 100%;
   }
 
   h2 {
@@ -64,6 +72,14 @@ export const Card = styled.div`
 
     div {
       height: 30%;
+      width: 100%;
+      padding-bottom: 1rem;
+    }
+
+    .title {
+      p {
+        font-size: 1rem;
+      }
     }
   }
 `;

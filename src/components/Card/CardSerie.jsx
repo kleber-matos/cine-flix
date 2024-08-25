@@ -12,8 +12,8 @@ export default function CardSerie({ title, imagem, id }) {
         <div>
           <div className="title">
             <p>{title}</p>
+            <button>assistir</button>
           </div>
-          <button>assistir</button>
         </div>
       </Link>
     </S.Card>
