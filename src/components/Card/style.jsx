@@ -27,8 +27,9 @@ export const Card = styled.div`
     ${BreackText}
     -webkit-line-clamp: 1;
     color: white;
-    height: 20vh;
+    height: 50vh;
     display: flex;
+    border: solid red;
 
     p {
       font-size: 1.2rem;
