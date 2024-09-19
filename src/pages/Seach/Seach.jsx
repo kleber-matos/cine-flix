@@ -10,7 +10,7 @@ import CardSerie from "../../components/Card/CardSerie";
 import Load from "../../components/Load/Load";
 
 export default function Seach() {
-  const [busca, setBusca] = useState("a");
+  const [busca, setBusca] = useState("d");
   const [filme, setFilme] = useState([]);
   const [serie, setSerie] = useState([]);
   const [buscaFilmes, setBuscaFilmes] = useState("");

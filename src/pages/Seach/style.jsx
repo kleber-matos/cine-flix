@@ -7,7 +7,8 @@ export const Container = styled.section`
 `;
 
 export const Box = styled.section`
-  width: 80%;
+  width: 100vw;
+  /* border: solid; */
   display: flex;
   justify-content: space-between;
   @media (max-width: 700px) {
@@ -21,12 +22,13 @@ export const Card = styled.div`
   flex-wrap: wrap;
   justify-content: space-evenly;
 
-  div {
-    width: 15vw;
+  /* div {
+    width: 20vw;
+    border: solid;
     max-width: 300px;
     margin-bottom: 1rem;
     height: 50vh;
-  }
+  } */
 
   img {
     width: 100%;
