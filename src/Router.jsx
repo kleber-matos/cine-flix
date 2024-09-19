@@ -5,6 +5,7 @@ import Series from "./pages/Series/Series";
 import AssitirFilme from "../src/components/Card/Assistir/AssitirFilme";
 import AssistirSerie from "./components/Card/Assistir/AssistirSerie";
 import Seach from "./pages/Seach/Seach";
+import Error from "../src/pages/Error";
 
 export default function Router() {
   return (
@@ -17,6 +18,7 @@ export default function Router() {
           <Route path="/series" element={<Series />} />
           <Route path="/assitirserie/:id" element={<AssistirSerie />} />
           <Route path="/seach" element={<Seach />} />
+          <Route path="*" element={<Error />} />
         </Routes>
       </BrowserRouter>
     </>
