@@ -22,13 +22,15 @@ export default function index({ qtd }) {
   `;
 
   return (
-    <Estrela>
-      {withStar.map((index) => (
-        <FaStar key={index} />
-      ))}
-      {noStar.map((index) => (
-        <FaRegStar key={index} />
-      ))}
-    </Estrela>
+    <>
+      <Estrela>
+        {withStar.map((index) => (
+          <FaStar key={index} />
+        ))}
+        {noStar.map((index) => (
+          <FaRegStar key={index} />
+        ))}
+      </Estrela>
+    </>
   );
 }

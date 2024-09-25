@@ -8,6 +8,8 @@ import CardFilme from "../../components/Card/CardFilme";
 import { MdNavigateBefore, MdNavigateNext } from "react-icons/md";
 import Load from "../../components/Load/Load";
 import BannerSlide from "../../components/Carrossel/BannerSlide";
+import Movie from "../../components/Movie";
+import Star from "../../components/Star";
 
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -53,45 +55,39 @@ export default function Home() {
         {filme.map((item, id) => (
           <SwiperSlide key={id}>
             <BannerSlide
-              num={id + 1}
+              title={item.title}
+              star={item.vote_average}
+              id={item.id}
+              description={item.overview}
+              pagina={"/assistirfilme/"}
               img={`https://image.tmdb.org/t/p/w500/${item.backdrop_path}`}
             />
           </SwiperSlide>
         ))}
-
-        {/* {filme.map((item, id) => (
-          <div>
-            <SwiperSlide key={id}>
-              <BannerSlide
-                img={`https://image.tmdb.org/t/p/w500/${item.backdrop_path}`}
-              />
-            </SwiperSlide>
-          </div>
-        ))} */}
       </Swiper>
 
-      <S.Container>
-        <S.Box>
-          <S.SpaceEvenly>
-            {filme.map((item, id) => (
-              <div key={id}>
-                <CardFilme
-                  id={item.id}
-                  title={item.title}
-                  imagem={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
-                />
-              </div>
-            ))}
-          </S.SpaceEvenly>
-        </S.Box>
-      </S.Container>
+      <S.GridContainer>
+        {filme.map((item, id) => (
+          <>
+            <Movie
+              rota={"/assistirfilme/"}
+              // star={`${Math.round(item.vote_average)}.0`}
+              id={item.id}
+              title={item.title}
+              imagem={`https://image.tmdb.org/t/p/original${item.poster_path}`}
+              star={item.vote_average}
+            />
+          </>
+        ))}
+      </S.GridContainer>
 
       <S.BoxPage>
         <div>
           <button
             onClick={() =>
               setPage((prev) => (prev > 1 ? prev - 1 : (prev = 1)))
-            }>
+            }
+          >
             <MdNavigateBefore />
           </button>
           <h2>{page}</h2>
@@ -100,11 +96,6 @@ export default function Home() {
           </button>
         </div>
       </S.BoxPage>
-
-      {/* <h1>Titulo</h1>
-      <h2>SubTitulo</h2>
-      <h3>H3</h3>
-      <p>Paragrafo</p> */}
     </>
   );
 }

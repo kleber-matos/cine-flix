@@ -114,3 +114,10 @@ export const SubTitle = styled.h2`
     font-size: clamp(1rem, 10vw, 1.2rem);
   }
 `;
+
+export const GridContainer = styled.section`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin: 0 5% 0 5%;
+`;

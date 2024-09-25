@@ -8,12 +8,16 @@ import Header from "../../components/Header/Header";
 import CardFilme from "../../components/Card/CardFilme";
 import CardSerie from "../../components/Card/CardSerie";
 import Load from "../../components/Load/Load";
+import Movie from "../../components/Movie";
+import Star from "../../components/Star";
 
 export default function Seach() {
   const [busca, setBusca] = useState("d");
   const [filme, setFilme] = useState([]);
   const [serie, setSerie] = useState([]);
   const [buscaFilmes, setBuscaFilmes] = useState("");
+
+  const [todos, setTodos] = useState([]);
 
   const [mensagem, setMensagem] = useState("");
   const [load, setLoad] = useState(true);
@@ -36,6 +40,9 @@ export default function Seach() {
       `https://api.themoviedb.org/3/search/tv?query=${busca}&api_key=6040fbaaf2352854942894b5b45b4729`
     );
     setSerie(dados1.data.results);
+    setTodos(todos.concat(dados1.data.results));
+
+    console.log(dados1.data.results);
   };
 
   useEffect(() => {
@@ -77,34 +84,33 @@ export default function Seach() {
         </div>
       </S.Buscar>
 
-      <S.SubTitle>{mensagem}</S.SubTitle>
-
-      <S.Container>
-        <S.Box>
-          <S.Card>
-            {filme.map((item, id) => (
-              <section key={id}>
-                <CardFilme
-                  id={item.id}
-                  title={item.title}
-                  imagem={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
-                />
-              </section>
-            ))}
-          </S.Card>
-          <S.Card>
-            {serie.map((item, id) => (
-              <section key={id}>
-                <CardSerie
-                  id={item.id}
-                  title={item.name}
-                  imagem={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
-                />
-              </section>
-            ))}
-          </S.Card>
-        </S.Box>
-      </S.Container>
+      <S.GridContainer>
+        {filme.map((item, id) => (
+          <>
+            <Movie
+              rota={"/assistirfilme/"}
+              // star={`${Math.round(item.vote_average)}.0`}
+              id={item.id}
+              title={item.title}
+              imagem={`https://image.tmdb.org/t/p/original${item.poster_path}`}
+              star={item.vote_average}
+            />
+          </>
+        ))}
+      </S.GridContainer>
+      <S.GridContainer>
+        {serie.map((item, id) => (
+          <>
+            <Movie
+              rota={"/assitirserie/"}
+              id={item.id}
+              title={item.name}
+              imagem={`https://image.tmdb.org/t/p/original${item.poster_path}`}
+              star={item.vote_average}
+            />
+          </>
+        ))}
+      </S.GridContainer>
     </div>
   );
 }

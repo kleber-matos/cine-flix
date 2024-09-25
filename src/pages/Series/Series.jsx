@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import Header from "../../components/Header/Header";
 import CardSeries from "../../components/Card/CardSerie";
 import * as S from "../Home/style";
+import Movie from "../../components/Movie";
 
 import axios from "axios";
 import { MdNavigateBefore, MdNavigateNext } from "react-icons/md";
@@ -42,28 +43,28 @@ export default function Series() {
       <S.SubTitle>
         Assista suas séries do momento <span>agora!</span>
       </S.SubTitle>
-      <S.Container>
-        <S.Box>
-          <S.SpaceEvenly>
-            {filme.map((item) => (
-              <div key={item.id}>
-                <CardSeries
-                  id={item.id}
-                  title={item.name}
-                  imagem={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
-                />
-              </div>
-            ))}
-          </S.SpaceEvenly>
-        </S.Box>
-      </S.Container>
+
+      <S.GridContainer>
+        {filme.map((item, id) => (
+          <>
+            <Movie
+              rota={"/assitirserie/"}
+              id={item.id}
+              title={item.name}
+              imagem={`https://image.tmdb.org/t/p/original${item.poster_path}`}
+              star={item.vote_average}
+            />
+          </>
+        ))}
+      </S.GridContainer>
 
       <S.BoxPage>
         <div>
           <button
             onClick={() =>
               setPage((prev) => (prev > 1 ? prev - 1 : (prev = 1)))
-            }>
+            }
+          >
             <MdNavigateBefore />
           </button>
           <h2>{page}</h2>

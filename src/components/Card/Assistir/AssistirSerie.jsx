@@ -70,7 +70,8 @@ export default function AssistirFilme() {
               allowfullscreen
               id="assistir"
               src={`https://superflixapi.top/serie/${id}`}
-              frameborder="0"></iframe>
+              frameborder="0"
+            ></iframe>
           </S.Iframe>
         </>
       )}

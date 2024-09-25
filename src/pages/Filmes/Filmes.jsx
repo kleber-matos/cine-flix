@@ -6,6 +6,7 @@ import * as S from "../Home/style";
 import Header from "../../components/Header/Header";
 import Load from "../../components/Load/Load";
 import CardFilme from "../../components/Card/CardFilme";
+import Movie from "../../components/Movie";
 
 export default function Filmes() {
   const [filme, setFilme] = useState([]);
@@ -38,6 +39,21 @@ export default function Filmes() {
       <Header />
 
       <S.SubTitle>Seus filmes favoritos estão aqui</S.SubTitle>
+
+      <S.GridContainer>
+        {filme.map((item, id) => (
+          <>
+            <Movie
+              rota={"/assistirfilme/"}
+              // star={`${Math.round(item.vote_average)}.0`}
+              id={item.id}
+              title={item.title}
+              imagem={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
+              star={item.vote_average}
+            />
+          </>
+        ))}
+      </S.GridContainer>
 
       <S.Container>
         <S.Box>
