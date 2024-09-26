@@ -11,12 +11,15 @@ const FlexBox = css`
 export const Header = styled.header`
   position: relative;
   width: 100%;
+
+  margin: 2rem 0 2rem 0;
+  align-items: center;
   z-index: 1;
-  background-color: #000000;
+  /* background-color: #000000; */
 
   .logo {
     font-size: clamp(1.2rem, 10vw, 2rem);
-    margin-left: 1rem;
+    /* margin-left: 1rem; */
     &:hover {
       border: none;
     }
@@ -53,9 +56,9 @@ export const Header = styled.header`
 export const NavDesktop = styled.div`
   ul {
     ${FlexBox}
-    justify-content: space-evenly;
+    justify-content: space-between;
     height: 10vh;
-    width: 40vw;
+    width: 25vw;
   }
 
   @media (max-width: 699px) {

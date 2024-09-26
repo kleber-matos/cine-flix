@@ -55,22 +55,6 @@ export default function Filmes() {
         ))}
       </S.GridContainer>
 
-      <S.Container>
-        <S.Box>
-          <S.SpaceEvenly>
-            {filme.map((item) => (
-              <div key={item.id}>
-                <CardFilme
-                  id={item.id}
-                  title={item.title}
-                  imagem={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
-                />
-              </div>
-            ))}
-          </S.SpaceEvenly>
-        </S.Box>
-      </S.Container>
-
       <S.BoxPage>
         <div>
           <button

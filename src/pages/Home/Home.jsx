@@ -47,9 +47,6 @@ export default function Home() {
   return (
     <>
       <Header />
-      <S.SubTitle>
-        Você está no CineFlix <span>gratuito!</span>
-      </S.SubTitle>
 
       <Swiper modules={[Autoplay]} autoplay={{ delay: 2000 }}>
         {filme.map((item, id) => (
@@ -66,7 +63,9 @@ export default function Home() {
           </SwiperSlide>
         ))}
       </Swiper>
-
+      <S.SubTitle>
+        Os Melhores Filmes Estão Aqui! <span>Cine Flix!</span>
+      </S.SubTitle>
       <S.GridContainer>
         {filme.map((item, id) => (
           <>
