@@ -75,7 +75,7 @@ export const NavMobile = styled.div`
     height: 60vh;
     position: absolute;
     backdrop-filter: blur(10px);
-    background-color: #000000;
+    /* background-color: #000000; */
     position: relative;
   }
 
