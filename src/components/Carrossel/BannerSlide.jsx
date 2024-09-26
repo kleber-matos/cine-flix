@@ -16,26 +16,48 @@ const Banner = styled.div`
   div {
     position: absolute;
     left: 7%;
-    top: 40%;
+    top: 45%;
     z-index: 1;
   }
 
   h2 {
     font-size: 3rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
   }
 
   p {
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 4;
     overflow: hidden;
     -webkit-box-orient: vertical;
   }
 
   img {
     width: 90%;
-    height: 50vh;
+    height: 60vh;
     object-fit: fill;
     opacity: 0.3;
+  }
+
+  .top {
+    position: absolute;
+    top: 0%;
+    right: 5%;
+    background-color: #f8b319;
+    width: 20%;
+    height: 5vh;
+    max-width: 150px;
+    z-index: 1;
+    border-radius: 0 0 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-weight: 700;
+    font-size: 2rem;
   }
 
   @media (max-width: 700px) {
@@ -46,6 +68,10 @@ const Banner = styled.div`
       left: 0;
       display: none;
     }
+
+    .top {
+      display: none;
+    }
   }
 `;
 
@@ -54,9 +80,9 @@ const Box = styled.div`
   justify-content: space-evenly;
   flex-direction: column;
   /* border: solid; */
-  min-height: 28vh;
+  min-height: 30vh;
   width: 80vw;
-  max-width: 900px;
+  max-width: 550px;
 
   a {
     height: 5vh;
@@ -82,7 +108,14 @@ const Box = styled.div`
   }
 `;
 
-export default function BannerSlide({ img, title, pagina, id, description }) {
+export default function BannerSlide({
+  img,
+  title,
+  pagina,
+  id,
+  description,
+  top,
+}) {
   return (
     <Banner>
       <Box>
@@ -90,6 +123,7 @@ export default function BannerSlide({ img, title, pagina, id, description }) {
         <p>{description}</p>
         <Link to={`${pagina}${id}`}>Asssitir Agora!</Link>
       </Box>
+      <p className="top">{top}</p>
       <img src={img} alt="img" />
     </Banner>
   );

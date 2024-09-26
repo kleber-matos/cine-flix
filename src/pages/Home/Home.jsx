@@ -58,6 +58,7 @@ export default function Home() {
               title={item.title}
               star={item.vote_average}
               id={item.id}
+              top={id + 1}
               description={item.overview}
               pagina={"/assistirfilme/"}
               img={`https://image.tmdb.org/t/p/w500/${item.backdrop_path}`}
