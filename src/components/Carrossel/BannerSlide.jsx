@@ -15,7 +15,7 @@ const Banner = styled.div`
 
   div {
     position: absolute;
-    left: 7%;
+    left: 2%;
     top: 45%;
     z-index: 1;
   }
@@ -36,7 +36,7 @@ const Banner = styled.div`
   }
 
   img {
-    width: 90%;
+    width: 100%;
     height: 60vh;
     object-fit: fill;
     opacity: 0.3;
@@ -45,7 +45,7 @@ const Banner = styled.div`
   .top {
     position: absolute;
     top: 0%;
-    right: 5%;
+    right: 0%;
     background-color: #f8b319;
     width: 20%;
     height: 5vh;
@@ -123,7 +123,7 @@ export default function BannerSlide({
         <p>{description}</p>
         <Link to={`${pagina}${id}`}>Asssitir Agora!</Link>
       </Box>
-      <p className="top">{top}</p>
+      <p className="top">{top}º</p>
       <img src={img} alt="img" />
     </Banner>
   );

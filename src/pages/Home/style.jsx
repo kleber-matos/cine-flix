@@ -15,7 +15,9 @@ export const SpaceEvenly = styled.section`
 
 export const SubTitle = styled.h2`
   ${FlexBox}
-  text-align: center;
+  justify-content: start;
+  font-size: 2.5rem;
+
   height: 10vh;
 
   span {
@@ -71,5 +73,4 @@ export const GridContainer = styled.section`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
-  margin: 0 5% 0 5%;
 `;

@@ -119,5 +119,4 @@ export const GridContainer = styled.section`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
-  margin: 0 5% 0 5%;
 `;
