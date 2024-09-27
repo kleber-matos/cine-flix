@@ -5,7 +5,7 @@ import axios from "axios";
 import * as S from "../Home/style";
 import Header from "../../components/Header/Header";
 import Load from "../../components/Load/Load";
-import CardFilme from "../../components/Card/CardFilme";
+// import CardFilme from "../../components/Card/CardFilme";
 import Movie from "../../components/Movie";
 
 export default function Filmes() {

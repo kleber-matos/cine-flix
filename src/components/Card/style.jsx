@@ -87,7 +87,7 @@ export const Card = styled.div`
 export const Assistir = styled.section`
   ${Flexbox}
   justify-content: space-evenly;
-  background-color: black;
+  /* background-color: black; */
   height: 95vh;
 
   img {
