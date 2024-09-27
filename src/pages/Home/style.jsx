@@ -26,7 +26,7 @@ export const SubTitle = styled.h2`
   }
   @media (max-width: 700px) {
     width: 100%;
-    font-size: clamp(1rem, 10vw, 0.6rem);
+    font-size: clamp(1rem, 10vw, 0.8rem);
   }
 `;
 
