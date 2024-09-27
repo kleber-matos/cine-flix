@@ -7,7 +7,7 @@ import React from "react";
 export default function Load() {
   return (
     <S.Load>
-      <img src={carregando} alt="" />
+      <div className="loader-circle"></div>
     </S.Load>
   );
 }

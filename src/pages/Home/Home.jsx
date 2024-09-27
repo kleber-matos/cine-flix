@@ -64,7 +64,7 @@ export default function Home() {
         ))}
       </Swiper>
       <S.SubTitle>
-        Os Melhores Filmes Estão Aqui! <span>Cine Flix!</span>
+        The Best Films<span>Cine Flix!</span>
       </S.SubTitle>
       <S.GridContainer>
         {filme.map((item, id) => (

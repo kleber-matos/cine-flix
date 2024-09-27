@@ -13,7 +13,7 @@ export default function index({ id, imagem, title, rota, star }) {
           <img src={imagem} alt={title} />
           <img
             className="load"
-            src="https://cdn.pixabay.com/animation/2023/08/11/21/18/21-18-05-265_512.gif"
+            src="https://upload.wikimedia.org/wikipedia/commons/a/a3/Lightness_rotate_36f_cw.gif"
             alt="Load"
           />
           <FaPlay className="icon" />
