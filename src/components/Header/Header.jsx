@@ -1,64 +1,48 @@
-import { useState } from "react";
+// import { useState } from "react";
 import * as S from "./style";
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-export default function Header() {
-  const [menu, setMenu] = useState(false);
+import React, { useState } from "react";
+
+const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <>
       <S.Header>
-        <section>
-          <Link className="logo" to="/">
-            Cine Flix
-          </Link>
-          <button onClick={() => setMenu(!menu)}>{menu ? "X" : "☰"}</button>
+        <S.Container>
+          <S.Logo>
+            <Link to="/">CINE FLIX</Link>
+          </S.Logo>
+          <S.ToggleButton onClick={toggleMenu}>
+            {isOpen ? "X" : "☰"}
+          </S.ToggleButton>
+        </S.Container>
 
-          <S.NavDesktop>
-            <nav>
-              <ul>
-                <li>
-                  <Link to="/">Inicio</Link>
-                </li>
-                <li>
-                  <Link to="/filmes">Filmes</Link>
-                </li>
-                <li>
-                  <Link to="/series">Séries</Link>
-                </li>
-                <li>
-                  <Link to="/seach">
-                    <FaSearch />
-                  </Link>
-                </li>
-              </ul>
-            </nav>
-          </S.NavDesktop>
-        </section>
-        <S.NavMobile>
-          {menu && (
-            <nav>
-              <ul>
-                <li>
-                  <Link to="/">Inicio</Link>
-                </li>
-                <li>
-                  <Link to="/filmes">Filmes</Link>
-                </li>
-                <li>
-                  <Link to="/series">Séries</Link>
-                </li>
-                <li>
-                  <Link to="/seach">
-                    <FaSearch />
-                  </Link>
-                </li>
-              </ul>
-            </nav>
-          )}
-        </S.NavMobile>
+        <S.Menu isOpen={isOpen}>
+          <li to="/">
+            <Link to="/">HOME</Link>
+          </li>
+          <li>
+            <Link to="/filmes">FILMS</Link>
+          </li>
+          <li>
+            <Link to="/series">SERIES</Link>
+          </li>
+          <li>
+            <Link to="/seach">
+              <FaSearch />
+            </Link>
+          </li>
+        </S.Menu>
       </S.Header>
     </>
   );
-}
+};
+
+export default Header;

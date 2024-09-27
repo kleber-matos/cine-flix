@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Header from "../../components/Header/Header";
-import CardSeries from "../../components/Card/CardSerie";
+// import CardSeries from "../../components/Card/CardSerie";
 import * as S from "../Home/style";
 import Movie from "../../components/Movie";
 

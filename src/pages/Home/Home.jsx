@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import * as S from "./style";
 import Header from "../../components/Header/Header";
 import axios from "axios";
-import CardFilme from "../../components/Card/CardFilme";
+// import CardFilme from "../../components/Card/CardFilme";
 import { MdNavigateBefore, MdNavigateNext } from "react-icons/md";
 import Load from "../../components/Load/Load";
 import BannerSlide from "../../components/Carrossel/BannerSlide";

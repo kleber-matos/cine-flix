@@ -5,8 +5,8 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 
 import Header from "../../components/Header/Header";
-import CardFilme from "../../components/Card/CardFilme";
-import CardSerie from "../../components/Card/CardSerie";
+// import CardFilme from "../../components/Card/CardFilme";
+// import CardSerie from "../../components/Card/CardSerie";
 import Load from "../../components/Load/Load";
 import Movie from "../../components/Movie";
 import Star from "../../components/Star";
