@@ -33,7 +33,7 @@ export const Banner = styled.div`
     width: 100%;
     height: 60vh;
     object-fit: fill;
-    opacity: 0.3;
+    opacity: 0.5;
   }
 
   @media (max-width: 750px) {

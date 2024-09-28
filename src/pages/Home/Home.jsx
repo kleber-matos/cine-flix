@@ -9,6 +9,7 @@ import { MdNavigateBefore, MdNavigateNext } from "react-icons/md";
 import Load from "../../components/Load/Load";
 import BannerSlide from "../../components/Carrossel/BannerSlide";
 import Movie from "../../components/Movie";
+import Genre from "../../components/Genre";
 import Star from "../../components/Star";
 
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
@@ -23,6 +24,7 @@ export default function Home() {
   const [page, setPage] = useState(1);
   const [load, setLoad] = useState(true);
 
+  // https://api.themoviedb.org/3/genre/movie/list?api_key=6040fbaaf2352854942894b5b45b4729
   const buscaDados = async () => {
     try {
       const dados = await axios.get(
@@ -38,16 +40,19 @@ export default function Home() {
 
   useEffect(() => {
     buscaDados();
+    console.log(filme);
   }, [page]);
 
   if (load) {
     return <Load />;
   }
 
+  const action = filme.filter((movie) => movie.genre_ids[0] < 20);
+  const family = filme.filter((movie) => movie.genre_ids[0] > 30);
+
   return (
     <>
       <Header />
-
       <Swiper modules={[Autoplay]} autoplay={{ delay: 2000 }}>
         {filme.map((item, id) => (
           <SwiperSlide key={id}>
@@ -58,7 +63,7 @@ export default function Home() {
               top={id + 1}
               description={item.overview}
               pagina={"/assistirfilme/"}
-              img={`https://image.tmdb.org/t/p/w500/${item.backdrop_path}`}
+              img={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`}
             />
           </SwiperSlide>
         ))}
@@ -66,6 +71,93 @@ export default function Home() {
       <S.SubTitle>
         The Best Films<span>Cine Flix!</span>
       </S.SubTitle>
+
+      <Swiper
+        spaceBetween={50}
+        modules={[Autoplay]}
+        autoplay={{ delay: 3000 }}
+        breakpoints={{
+          "@0.00": {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+          "@0.75": {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          "@1.00": {
+            slidesPerView: 3,
+            spaceBetween: 40,
+          },
+          "@1.50": {
+            slidesPerView: 6,
+            spaceBetween: 50,
+          },
+        }}
+      >
+        {action.map((item, id) => (
+          <>
+            <SwiperSlide>
+              <Movie
+                rota={"/assistirfilme/"}
+                // star={`${Math.round(item.vote_average)}.0`}
+                id={item.id}
+                title={item.title}
+                imagem={`https://image.tmdb.org/t/p/original${item.poster_path}`}
+                star={item.vote_average}
+              />
+            </SwiperSlide>
+          </>
+        ))}
+      </Swiper>
+
+      <S.SubTitle>
+        Watch<span>Now!</span>
+      </S.SubTitle>
+
+      <Swiper
+        spaceBetween={50}
+        modules={[Autoplay]}
+        autoplay={{ delay: 2000 }}
+        breakpoints={{
+          "@0.00": {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+          "@0.75": {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          "@1.00": {
+            slidesPerView: 3,
+            spaceBetween: 40,
+          },
+          "@1.50": {
+            slidesPerView: 6,
+            spaceBetween: 50,
+          },
+        }}
+      >
+        {family.map((item, id) => (
+          <>
+            <SwiperSlide>
+              <Movie
+                rota={"/assistirfilme/"}
+                // star={`${Math.round(item.vote_average)}.0`}
+                id={item.id}
+                title={item.title}
+                imagem={`https://image.tmdb.org/t/p/original${item.poster_path}`}
+                star={item.vote_average}
+              />
+            </SwiperSlide>
+          </>
+        ))}
+      </Swiper>
+
+      <S.SubTitle>
+        All<span>Movies!</span>
+      </S.SubTitle>
+
       <S.GridContainer>
         {filme.map((item, id) => (
           <>
@@ -80,7 +172,6 @@ export default function Home() {
           </>
         ))}
       </S.GridContainer>
-
       <S.BoxPage>
         <div>
           <button
