@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Card = styled.div`
   position: relative;
   margin-top: 15px;
-  min-height: 60vh;
+  min-height: 50vh;
 
   img {
     width: 100%;
