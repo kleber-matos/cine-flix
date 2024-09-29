@@ -26,7 +26,7 @@ export const Banner = styled.div`
 
   p {
     ${TextPoint}
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 3;
   }
 
   img {
