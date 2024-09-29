@@ -1,11 +1,12 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import Home from "./pages/Home/Home";
+import Error from "../src/pages/Error";
+import Seach from "./pages/Seach/Seach";
 import Filmes from "./pages/Filmes/Filmes";
 import Series from "./pages/Series/Series";
-import AssitirFilme from "../src/components/Card/Assistir/AssitirFilme";
 import AssistirSerie from "./components/Card/Assistir/AssistirSerie";
-import Seach from "./pages/Seach/Seach";
-import Error from "../src/pages/Error";
+import AssitirFilme from "../src/components/Card/Assistir/AssitirFilme";
 
 export default function Router() {
   return (
