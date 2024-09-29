@@ -26,6 +26,7 @@ export const Card = styled.div`
     left: 42%;
     width: 50px;
     z-index: 0;
+    width: 30px;
   }
 
   &:hover {
