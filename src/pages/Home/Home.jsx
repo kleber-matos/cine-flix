@@ -1,37 +1,35 @@
-/** @format */
-
-import React, { useEffect, useState } from "react";
 import * as S from "./style";
-import Header from "../../components/Header/Header";
 import axios from "axios";
-// import CardFilme from "../../components/Card/CardFilme";
+import React, { useEffect, useState } from "react";
 import { MdNavigateBefore, MdNavigateNext } from "react-icons/md";
-import Load from "../../components/Load/Load";
-import BannerSlide from "../../components/Carrossel/BannerSlide";
-import Movie from "../../components/Movie";
-import Genre from "../../components/Genre";
-import Star from "../../components/Star";
 
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
+// Components
+import Movie from "../../components/Movie";
+import Load from "../../components/Load/Load";
+import Header from "../../components/Header/Header";
+import BannerSlide from "../../components/Carrossel/BannerSlide";
+
+// Swiper / carrossel
 import "swiper/css";
+import "swiper/css/autoplay";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "swiper/css/autoplay";
+import { Autoplay } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 export default function Home() {
-  const [filme, setFilme] = useState([]);
+  // States
   const [page, setPage] = useState(1);
+  const [filme, setFilme] = useState([]);
   const [load, setLoad] = useState(true);
 
-  // https://api.themoviedb.org/3/genre/movie/list?api_key=6040fbaaf2352854942894b5b45b4729
+  // Request
   const buscaDados = async () => {
     try {
       const dados = await axios.get(
         `https://api.themoviedb.org/3/movie/popular?api_key=6040fbaaf2352854942894b5b45b4729&language=pt-BR&page=${page}`
       );
       setFilme(dados.data.results);
-      console.log(dados.data.results);
       setLoad(false);
     } catch (err) {
       console.log(err);
@@ -40,19 +38,20 @@ export default function Home() {
 
   useEffect(() => {
     buscaDados();
-    console.log(filme);
   }, [page]);
 
   if (load) {
     return <Load />;
   }
 
+  //Genre Movies
   const action = filme.filter((movie) => movie.genre_ids[0] < 20);
   const family = filme.filter((movie) => movie.genre_ids[0] > 30);
 
   return (
     <>
       <Header />
+
       <Swiper modules={[Autoplay]} autoplay={{ delay: 2000 }}>
         {filme.map((item, id) => (
           <SwiperSlide key={id}>
@@ -68,6 +67,7 @@ export default function Home() {
           </SwiperSlide>
         ))}
       </Swiper>
+
       <S.SubTitle>
         The Best Films<span>Cine Flix!</span>
       </S.SubTitle>
@@ -99,8 +99,8 @@ export default function Home() {
           <>
             <SwiperSlide>
               <Movie
+                key={id}
                 rota={"/assistirfilme/"}
-                // star={`${Math.round(item.vote_average)}.0`}
                 id={item.id}
                 title={item.title}
                 imagem={`https://image.tmdb.org/t/p/original${item.poster_path}`}
@@ -143,11 +143,10 @@ export default function Home() {
             <SwiperSlide>
               <Movie
                 rota={"/assistirfilme/"}
-                // star={`${Math.round(item.vote_average)}.0`}
                 id={item.id}
                 title={item.title}
-                imagem={`https://image.tmdb.org/t/p/original${item.poster_path}`}
                 star={item.vote_average}
+                imagem={`https://image.tmdb.org/t/p/original${item.poster_path}`}
               />
             </SwiperSlide>
           </>
@@ -166,8 +165,8 @@ export default function Home() {
               // star={`${Math.round(item.vote_average)}.0`}
               id={item.id}
               title={item.title}
-              imagem={`https://image.tmdb.org/t/p/original${item.poster_path}`}
               star={item.vote_average}
+              imagem={`https://image.tmdb.org/t/p/original${item.poster_path}`}
             />
           </>
         ))}

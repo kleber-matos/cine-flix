@@ -1,18 +1,17 @@
-/** @format */
-
-import React, { useEffect, useState } from "react";
-import Header from "../../components/Header/Header";
-// import CardSeries from "../../components/Card/CardSerie";
-import * as S from "../Home/style";
-import Movie from "../../components/Movie";
-
 import axios from "axios";
+import * as S from "../Home/style";
+import React, { useEffect, useState } from "react";
 import { MdNavigateBefore, MdNavigateNext } from "react-icons/md";
+
+// Components
+import Movie from "../../components/Movie";
 import Load from "../../components/Load/Load";
+import Header from "../../components/Header/Header";
 
 export default function Series() {
-  const [filme, setFilme] = useState([]);
+  // States
   const [page, setPage] = useState(1);
+  const [filme, setFilme] = useState([]);
   const [load, setLoad] = useState(true);
 
   const buscaDados = async () => {
@@ -20,9 +19,7 @@ export default function Series() {
       const dados = await axios.get(
         `https://api.themoviedb.org/3/discover/tv?api_key=6040fbaaf2352854942894b5b45b4729&language=pt-BR&page=${page}`
       );
-
       setFilme(dados.data.results);
-      console.log(dados.data.results);
       setLoad(false);
     } catch (err) {
       console.log(err);
@@ -40,6 +37,7 @@ export default function Series() {
   return (
     <>
       <Header />
+
       <S.SubTitle>
         Assista suas séries do momento <span>agora!</span>
       </S.SubTitle>
@@ -48,6 +46,7 @@ export default function Series() {
         {filme.map((item, id) => (
           <>
             <Movie
+              key={id}
               rota={"/assitirserie/"}
               id={item.id}
               title={item.name}
@@ -73,11 +72,6 @@ export default function Series() {
           </button>
         </div>
       </S.BoxPage>
-
-      {/* <h1>Titulo</h1>
-      <h2>SubTitulo</h2>
-      <h3>H3</h3>
-      <p>Paragrafo</p> */}
     </>
   );
 }

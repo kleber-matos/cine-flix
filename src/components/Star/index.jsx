@@ -1,6 +1,6 @@
 import React from "react";
-import { FaStar, FaRegStar } from "react-icons/fa";
 import styled from "styled-components";
+import { FaStar, FaRegStar } from "react-icons/fa";
 
 export default function index({ qtd }) {
   const numStars = Math.round(qtd / 2);

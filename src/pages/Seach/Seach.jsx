@@ -1,23 +1,18 @@
-/** @format */
-
-import * as S from "./style";
 import axios from "axios";
+import * as S from "./style";
 import React, { useEffect, useState } from "react";
 
-import Header from "../../components/Header/Header";
-// import CardFilme from "../../components/Card/CardFilme";
-// import CardSerie from "../../components/Card/CardSerie";
-import Load from "../../components/Load/Load";
+// Components
 import Movie from "../../components/Movie";
-import Star from "../../components/Star";
+import Load from "../../components/Load/Load";
+import Header from "../../components/Header/Header";
 
 export default function Seach() {
-  const [busca, setBusca] = useState("d");
+  // States
   const [filme, setFilme] = useState([]);
   const [serie, setSerie] = useState([]);
+  const [busca, setBusca] = useState("d");
   const [buscaFilmes, setBuscaFilmes] = useState("");
-
-  const [todos, setTodos] = useState([]);
 
   const [mensagem, setMensagem] = useState("");
   const [load, setLoad] = useState(true);
@@ -40,9 +35,6 @@ export default function Seach() {
       `https://api.themoviedb.org/3/search/tv?query=${busca}&api_key=6040fbaaf2352854942894b5b45b4729`
     );
     setSerie(dados1.data.results);
-    setTodos(todos.concat(dados1.data.results));
-
-    console.log(dados1.data.results);
   };
 
   useEffect(() => {
@@ -62,7 +54,7 @@ export default function Seach() {
   }
 
   return (
-    <div>
+    <>
       <Header />
 
       <S.Buscar>
@@ -88,12 +80,12 @@ export default function Seach() {
         {filme.map((item, id) => (
           <>
             <Movie
+              key={id}
               rota={"/assistirfilme/"}
-              // star={`${Math.round(item.vote_average)}.0`}
               id={item.id}
               title={item.title}
-              imagem={`https://image.tmdb.org/t/p/original${item.poster_path}`}
               star={item.vote_average}
+              imagem={`https://image.tmdb.org/t/p/original${item.poster_path}`}
             />
           </>
         ))}
@@ -102,15 +94,16 @@ export default function Seach() {
         {serie.map((item, id) => (
           <>
             <Movie
+              key={id}
               rota={"/assitirserie/"}
               id={item.id}
               title={item.name}
-              imagem={`https://image.tmdb.org/t/p/original${item.poster_path}`}
               star={item.vote_average}
+              imagem={`https://image.tmdb.org/t/p/original${item.poster_path}`}
             />
           </>
         ))}
       </S.GridContainer>
-    </div>
+    </>
   );
 }

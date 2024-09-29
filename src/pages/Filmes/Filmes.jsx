@@ -1,16 +1,15 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { MdNavigateBefore, MdNavigateNext } from "react-icons/md";
-import axios from "axios";
 
 import * as S from "../Home/style";
-import Header from "../../components/Header/Header";
-import Load from "../../components/Load/Load";
-// import CardFilme from "../../components/Card/CardFilme";
 import Movie from "../../components/Movie";
+import Load from "../../components/Load/Load";
+import Header from "../../components/Header/Header";
 
 export default function Filmes() {
-  const [filme, setFilme] = useState([]);
   const [page, setPage] = useState(2);
+  const [filme, setFilme] = useState([]);
   const [load, setLoad] = useState(true);
 
   const buscaDados = async () => {
@@ -20,7 +19,6 @@ export default function Filmes() {
       );
       setFilme(dados.data.results);
       setLoad(false);
-      // console.log(dados.data.results);
     } catch (err) {
       // console.log(err);
     }
@@ -44,8 +42,8 @@ export default function Filmes() {
         {filme.map((item, id) => (
           <>
             <Movie
+              key={id}
               rota={"/assistirfilme/"}
-              // star={`${Math.round(item.vote_average)}.0`}
               id={item.id}
               title={item.title}
               imagem={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}

@@ -1,9 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import Star from "../../components/Star";
-import { FaPlay } from "react-icons/fa";
-
 import * as S from "./style";
+
+import { Link } from "react-router-dom";
+import { FaPlay } from "react-icons/fa";
+import Star from "../../components/Star";
 
 export default function index({ id, imagem, title, rota, star }) {
   return (
