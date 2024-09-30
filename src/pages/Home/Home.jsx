@@ -102,6 +102,7 @@ export default function Home() {
                 key={id}
                 rota={"/assistirfilme/"}
                 id={item.id}
+                selo={"New"}
                 title={item.title}
                 imagem={`https://image.tmdb.org/t/p/original${item.poster_path}`}
                 star={item.vote_average}

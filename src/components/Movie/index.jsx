@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { FaPlay } from "react-icons/fa";
 import Star from "../../components/Star";
 
-export default function index({ id, imagem, title, rota, star }) {
+export default function index({ id, imagem, title, rota, star, selo }) {
   return (
     <S.Card>
       <Link to={`${rota}${id}`}>
@@ -17,7 +17,7 @@ export default function index({ id, imagem, title, rota, star }) {
           />
           <FaPlay className="icon" />
         </div>
-
+        <p className="selo">{selo}</p>
         <p>{title}</p>
       </Link>
       <Star qtd={star} />

@@ -20,6 +20,19 @@ export const Card = styled.div`
     transition: 0.5s;
   }
 
+  .selo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    width: 30%;
+    color: black;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 0 0 0 10px;
+    background-color: #f8b319;
+  }
+
   .load {
     position: absolute;
     top: 41%;
