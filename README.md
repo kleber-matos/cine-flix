@@ -29,11 +29,14 @@ Figma em criação: novo layout em desenvolvimento! Aceito sugestões para aprim
 ---
 
 ### O site ainda está em desenvolvimento, faltandos alguns recursos... Continue acompanhando para ver as novidades e melhorias futuras!
-
+<div>
+  <img src="https://github.com/user-attachments/assets/440b446c-65db-4e4e-a4c4-3c7361c5a3ee" style="width: 350px; height: 450px;">
+  <img src="https://github.com/user-attachments/assets/ba56bbd0-93dc-4e88-ae19-976ac3c8efcd" alt="Descrição da imagem" style="width: 350px; height: 450px;">
+</div>
 
 **Site criado apenas para fins de estudos** 💻📝
 
-![WhatsApp Image 2024-07-29 at 20 01 32](https://github.com/user-attachments/assets/f78290e6-1a46-4180-a2f8-d95a9f14e709)
+
 
 
 Em progresso :construction:
