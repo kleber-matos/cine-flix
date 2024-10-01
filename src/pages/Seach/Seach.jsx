@@ -6,6 +6,7 @@ import React, { useEffect, useState } from "react";
 import Movie from "../../components/Movie";
 import Load from "../../components/Load/Load";
 import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer";
 
 export default function Seach() {
   // States
@@ -104,6 +105,9 @@ export default function Seach() {
           </>
         ))}
       </S.GridContainer>
+
+      <hr />
+      <Footer />
     </>
   );
 }

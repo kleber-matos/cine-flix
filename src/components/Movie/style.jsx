@@ -11,6 +11,15 @@ export const Card = styled.div`
     position: relative;
   }
 
+  p {
+    @media (max-width: 1300px) {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+  }
+
   .icon {
     position: absolute;
     top: 41%;
@@ -18,6 +27,9 @@ export const Card = styled.div`
     font-size: 4rem;
     opacity: 0;
     transition: 0.5s;
+
+    @media (max-width: 1300px) {
+    }
   }
 
   .selo {

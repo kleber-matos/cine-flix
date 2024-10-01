@@ -7,6 +7,7 @@ import { MdNavigateBefore, MdNavigateNext } from "react-icons/md";
 import Movie from "../../components/Movie";
 import Load from "../../components/Load/Load";
 import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer";
 
 export default function Series() {
   // States
@@ -72,6 +73,9 @@ export default function Series() {
           </button>
         </div>
       </S.BoxPage>
+
+      <hr />
+      <Footer />
     </>
   );
 }

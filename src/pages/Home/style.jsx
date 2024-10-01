@@ -49,7 +49,7 @@ export const BoxPage = styled.section`
   div {
     ${FlexBox}
     justify-content: space-evenly;
-    height: 9vh;
+    height: 14vh;
     width: 20%;
     min-width: 200px;
   }

@@ -16,6 +16,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import Footer from "../../components/Footer/index.jsx";
 
 export default function Home() {
   // States
@@ -187,6 +188,8 @@ export default function Home() {
           </button>
         </div>
       </S.BoxPage>
+      <hr />
+      <Footer />
     </>
   );
 }
