@@ -12,6 +12,7 @@ const TextPoint = css`
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+  text-shadow: 0.1em 0.1em 0.2em black;
 `;
 
 // Styles
@@ -80,6 +81,7 @@ export const Box = styled.div`
     ${FlexBox}
     color: black;
     cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
   }
 
   p {
