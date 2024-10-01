@@ -43,6 +43,7 @@ export const Card = styled.div`
     text-align: center;
     border-radius: 0 0 0 10px;
     background-color: #f8b319;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
   }
 
   .load {
