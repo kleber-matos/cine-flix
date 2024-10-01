@@ -6,6 +6,7 @@ import * as S from "../Home/style";
 import Movie from "../../components/Movie";
 import Load from "../../components/Load/Load";
 import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer";
 
 export default function Filmes() {
   const [page, setPage] = useState(2);
@@ -68,6 +69,9 @@ export default function Filmes() {
           </button>
         </div>
       </S.BoxPage>
+
+      <hr />
+      <Footer />
     </>
   );
 }
