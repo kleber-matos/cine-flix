@@ -42,6 +42,10 @@ export default function AssistirFilme() {
     <>
       <Header />
       <S.Assistir>
+        <img
+          src={`https://image.tmdb.org/t/p/original${filme.poster_path}`}
+          alt="img"
+        />
         <S.About>
           <h1>{filme.name}</h1>
           <div className="sinopse">
@@ -53,11 +57,6 @@ export default function AssistirFilme() {
             Assistir
           </S.Button>
         </S.About>
-
-        <img
-          src={`https://image.tmdb.org/t/p/w500/${filme.poster_path}`}
-          alt="img"
-        />
       </S.Assistir>
 
       {play && (

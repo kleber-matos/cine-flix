@@ -1,5 +1,3 @@
-/** @format */
-
 import axios from "axios";
 import React, { useState } from "react";
 import { FaStar } from "react-icons/fa";
@@ -42,6 +40,10 @@ export default function AssistirFilme() {
     <>
       <Header />
       <S.Assistir>
+        <img
+          src={`https://image.tmdb.org/t/p/original${filme.backdrop_path}`}
+          alt=""
+        />
         <S.About>
           <h1>{filme.title}</h1>
           <div className="sinopse">
@@ -57,11 +59,6 @@ export default function AssistirFilme() {
             Assistir
           </S.Button>
         </S.About>
-
-        <img
-          src={`https://image.tmdb.org/t/p/w500/${filme.poster_path}`}
-          alt=""
-        />
       </S.Assistir>
 
       {play && (
@@ -74,7 +71,8 @@ export default function AssistirFilme() {
               allowfullscreen
               id="assistir"
               src={`https://superflixapi.top/filme/${id}`}
-              frameborder="0"></iframe>
+              frameborder="0"
+            ></iframe>
           </S.Iframe>
         </>
       )}
