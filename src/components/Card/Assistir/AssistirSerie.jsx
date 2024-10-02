@@ -43,7 +43,7 @@ export default function AssistirFilme() {
       <Header />
       <S.Assistir>
         <img
-          src={`https://image.tmdb.org/t/p/original${filme.poster_path}`}
+          src={`https://image.tmdb.org/t/p/original${filme.backdrop_path}`}
           alt="img"
         />
         <S.About>
