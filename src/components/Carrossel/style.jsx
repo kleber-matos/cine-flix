@@ -15,7 +15,7 @@ const TextPoint = css`
   text-shadow: 0.1em 0.1em 0.2em black;
 `;
 
-// Styles
+// Banner Styles
 export const Banner = styled.div`
   ${FlexBox}
   position: relative;
@@ -42,11 +42,11 @@ export const Banner = styled.div`
   }
 `;
 
-export const Qualificacao = styled.p`
-  ${FlexBox}
+// Qualificacao Styles
+export const Qualificacao = styled.span`
   position: absolute;
-  top: 0%;
-  right: 0%;
+  top: 0;
+  right: 0;
   width: 20%;
   height: 5vh;
   color: black;
@@ -59,11 +59,11 @@ export const Qualificacao = styled.p`
   background-color: #f8b319;
 `;
 
+// Box Styles
 export const Box = styled.div`
   display: flex;
-  justify-content: space-evenly;
   flex-direction: column;
-  /* border: solid; */
+  justify-content: space-evenly;
   min-height: 30vh;
   width: 80vw;
   max-width: 550px;
@@ -91,6 +91,6 @@ export const Box = styled.div`
 
   @media (max-width: 700px) {
     width: 90%;
-    justify-content: end;
+    justify-content: flex-end;
   }
 `;
