@@ -86,12 +86,15 @@ export const Card = styled.div`
 
 export const Assistir = styled.section`
   ${Flexbox}
-  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: start;
+
   /* background-color: black; */
   height: 95vh;
 
   img {
-    width: 30%;
+    width: 100%;
+    height: 60vh;
   }
 
   h2 {
@@ -102,6 +105,7 @@ export const Assistir = styled.section`
   @media (max-width: 700px) {
     flex-direction: column;
     justify-content: space-evenly;
+    align-items: center;
     img {
       width: 100%;
       height: 40%;
@@ -110,16 +114,17 @@ export const Assistir = styled.section`
 `;
 export const About = styled.section`
   width: 60%;
-  height: 50%;
+  height: 40vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 
   .sinopse {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
     -webkit-line-clamp: 7;
-    height: 48%;
+
     color: #a8a8a8;
   }
 
@@ -156,8 +161,8 @@ export const Iframe = styled.div`
 export const Button = styled.a`
   ${Flexbox}
   background-color: red;
-  width: 30%;
-  height: 10%;
+  width: 50%;
+  height: 13%;
   border-radius: 5px;
   text-decoration: none;
   color: white;
