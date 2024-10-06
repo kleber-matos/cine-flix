@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { FaStar } from "react-icons/fa";
+import Star from "../../Star";
 
 import { useParams } from "react-router-dom";
 import Header from "../../Header/Header";
@@ -36,45 +37,50 @@ export default function AssistirFilme() {
     return <Load />;
   }
 
+  const FormatarData = ({ dataString }) => {
+    const data = new Date(dataString);
+    const dia = String(data.getDate()).padStart(2, "0");
+    const mes = String(data.getMonth() + 1).padStart(2, "0");
+    const ano = data.getFullYear();
+    return `${dia}/${mes}/${ano}`;
+  };
+
   return (
     <>
       <Header />
-      <S.Assistir>
+      <S.Container>
         <img
           src={`https://image.tmdb.org/t/p/original${filme.backdrop_path}`}
           alt=""
         />
-        <S.About>
+        <S.Info>
           <h1>{filme.title}</h1>
-          <div className="sinopse">
-            <p>{filme.overview}</p>
-          </div>
-          <p>{filme.release_date}</p>
 
-          <p>
-            {filme.vote_average} <FaStar />
-          </p>
+          <p>{filme.overview}</p>
 
-          <S.Button href="#assistir" onClick={() => setPlay(true)}>
+          <span>
+            <Star qtd={filme.vote_average} />
+          </span>
+
+          <a href="#assistir" onClick={() => setPlay(true)}>
             Assistir
-          </S.Button>
-        </S.About>
-      </S.Assistir>
+          </a>
+          <FormatarData dataString={filme.release_date} />
+        </S.Info>
+      </S.Container>
 
       {play && (
-        <>
-          <S.SubTtitle>Assista aqui em baixo</S.SubTtitle>
-          <S.Iframe>
-            <iframe
-              mozallowfullscreen
-              webkitallowfullscreen
-              allowfullscreen
-              id="assistir"
-              src={`https://superflixapi.top/filme/${id}`}
-              frameborder="0"
-            ></iframe>
-          </S.Iframe>
-        </>
+        <S.PlayMovie>
+          <p>Assista aqui em baixo!</p>
+          <iframe
+            id="assistir"
+            mozallowfullscreen
+            webkitallowfullscreen
+            allowfullscreen
+            src={`https://superflixapi.top/filme/${id}`}
+            frameborder="0"
+          ></iframe>
+        </S.PlayMovie>
       )}
     </>
   );
