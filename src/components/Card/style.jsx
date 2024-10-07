@@ -42,8 +42,8 @@ export const Info = styled.div`
     background-color: red;
     color: white;
     border-radius: 10px;
-    max-width: 300px;
-    margin-bottom: 10px;
+    max-width: 350px;
+    margin: 10px 0 25px 0;
     cursor: pointer;
     ${Flexbox}
     &:hover {
