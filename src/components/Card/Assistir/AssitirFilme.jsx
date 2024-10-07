@@ -37,14 +37,6 @@ export default function AssistirFilme() {
     return <Load />;
   }
 
-  const FormatarData = ({ dataString }) => {
-    const data = new Date(dataString);
-    const dia = String(data.getDate()).padStart(2, "0");
-    const mes = String(data.getMonth() + 1).padStart(2, "0");
-    const ano = data.getFullYear();
-    return `${dia}/${mes}/${ano}`;
-  };
-
   return (
     <>
       <Header />
@@ -65,7 +57,6 @@ export default function AssistirFilme() {
           <a href="#assistir" onClick={() => setPlay(true)}>
             Assistir
           </a>
-          <FormatarData dataString={filme.release_date} />
         </S.Info>
       </S.Container>
 
