@@ -30,26 +30,21 @@ export const Logo = styled.h1`
 `;
 
 export const Menu = styled.ul`
+  width: 100%;
+  max-width: 600px;
+  /* border: solid; */
   display: flex;
-  width: 40vw;
-  max-width: 500px;
   justify-content: space-between;
 
-  a {
-    font-size: 1.3rem;
-  }
-
   @media (max-width: 700px) {
-    height: 30vh;
-    justify-content: space-evenly;
-    align-items: end;
-    flex-direction: column;
     display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
-    width: 100%;
 
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 36vh;
     li {
-      border-bottom: solid 4px;
-      width: 100%;
+      font-size: 1.4rem;
     }
   }
 `;
