@@ -48,18 +48,21 @@ export const Buscar = styled.div`
   height: 15vh;
 
   div {
-    width: 35%;
+    width: 100%;
+    border: solid red;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 5vh;
     border: solid 2px #3333336c;
+    max-width: 900px;
   }
 
   input {
     width: 80%;
-    height: 103%;
+    height: 100%;
     outline: none;
+    border: none;
     font-size: clamp(1rem, 10vw, 1.5rem);
     padding-left: 1rem;
     font-weight: 600;
@@ -86,7 +89,6 @@ export const Buscar = styled.div`
 
   @media (max-width: 700px) {
     div {
-      width: 85%;
       height: 50%;
     }
     input {
