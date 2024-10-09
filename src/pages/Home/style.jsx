@@ -14,7 +14,6 @@ export const SpaceEvenly = styled.section`
 `;
 
 export const SubTitle = styled.h2`
-  ${FlexBox}
   justify-content: start;
   font-size: 2.5rem;
 
